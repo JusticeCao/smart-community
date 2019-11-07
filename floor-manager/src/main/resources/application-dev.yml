@@ -1,0 +1,18 @@
+debug: true
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://119.23.190.71:3306/db_conmmuty_floor?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      password: root
+      username: root
+      initial-size: 5
+      max-active: 20
+      min-idle: 3
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+
+pagehelper:
+  reasonable: true

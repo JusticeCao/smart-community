@@ -1,0 +1,15 @@
+debug: true
+
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://127.0.0.1:3306/demo13?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&useSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      password: root
+      username: root
+      initial-size: 5
+      max-active: 20
+      min-idle: 3
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml

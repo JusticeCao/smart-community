@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.floor.manager.floormanager.mapper.BusinessCommunityMapper">
+  <resultMap id="BaseResultMap" type="com.floor.manager.floormanager.domain.entity.BusinessCommunity">
+    <!--@mbg.generated-->
+    <!--@Table business_community-->
+    <id column="community_id" jdbcType="INTEGER" property="communityId" />
+    <result column="b_id" jdbcType="VARCHAR" property="bId" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="city_code" jdbcType="VARCHAR" property="cityCode" />
+    <result column="nearby_landmarks" jdbcType="VARCHAR" property="nearbyLandmarks" />
+    <result column="map_x" jdbcType="VARCHAR" property="mapX" />
+    <result column="map_y" jdbcType="VARCHAR" property="mapY" />
+    <result column="month" jdbcType="INTEGER" property="month" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    community_id, b_id, `name`, address, city_code, nearby_landmarks, map_x, map_y, `month`, 
+    create_time, operate
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from business_community
+    where community_id = #{communityId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from business_community
+    where community_id = #{communityId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="community_id" keyProperty="communityId" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunity" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into business_community (b_id, `name`, address, 
+      city_code, nearby_landmarks, map_x, 
+      map_y, `month`, create_time, 
+      operate)
+    values (#{bId,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{cityCode,jdbcType=VARCHAR}, #{nearbyLandmarks,jdbcType=VARCHAR}, #{mapX,jdbcType=VARCHAR}, 
+      #{mapY,jdbcType=VARCHAR}, #{month,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{operate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="community_id" keyProperty="communityId" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunity" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into business_community
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bId != null">
+        b_id,
+      </if>
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="cityCode != null">
+        city_code,
+      </if>
+      <if test="nearbyLandmarks != null">
+        nearby_landmarks,
+      </if>
+      <if test="mapX != null">
+        map_x,
+      </if>
+      <if test="mapY != null">
+        map_y,
+      </if>
+      <if test="month != null">
+        `month`,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operate != null">
+        operate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bId != null">
+        #{bId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nearbyLandmarks != null">
+        #{nearbyLandmarks,jdbcType=VARCHAR},
+      </if>
+      <if test="mapX != null">
+        #{mapX,jdbcType=VARCHAR},
+      </if>
+      <if test="mapY != null">
+        #{mapY,jdbcType=VARCHAR},
+      </if>
+      <if test="month != null">
+        #{month,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        #{operate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunity">
+    <!--@mbg.generated-->
+    update business_community
+    <set>
+      <if test="bId != null">
+        b_id = #{bId,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        `name` = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="cityCode != null">
+        city_code = #{cityCode,jdbcType=VARCHAR},
+      </if>
+      <if test="nearbyLandmarks != null">
+        nearby_landmarks = #{nearbyLandmarks,jdbcType=VARCHAR},
+      </if>
+      <if test="mapX != null">
+        map_x = #{mapX,jdbcType=VARCHAR},
+      </if>
+      <if test="mapY != null">
+        map_y = #{mapY,jdbcType=VARCHAR},
+      </if>
+      <if test="month != null">
+        `month` = #{month,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        operate = #{operate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where community_id = #{communityId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunity">
+    <!--@mbg.generated-->
+    update business_community
+    set b_id = #{bId,jdbcType=VARCHAR},
+      `name` = #{name,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      city_code = #{cityCode,jdbcType=VARCHAR},
+      nearby_landmarks = #{nearbyLandmarks,jdbcType=VARCHAR},
+      map_x = #{mapX,jdbcType=VARCHAR},
+      map_y = #{mapY,jdbcType=VARCHAR},
+      `month` = #{month,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      operate = #{operate,jdbcType=VARCHAR}
+    where community_id = #{communityId,jdbcType=INTEGER}
+  </update>
+</mapper>

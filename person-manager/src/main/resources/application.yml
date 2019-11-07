@@ -1,0 +1,13 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: business_user
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.42.138:8848
+

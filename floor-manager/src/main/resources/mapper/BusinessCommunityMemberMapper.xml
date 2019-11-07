@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.floor.manager.floormanager.mapper.BusinessCommunityMemberMapper">
+  <resultMap id="BaseResultMap" type="com.floor.manager.floormanager.domain.entity.BusinessCommunityMember">
+    <!--@mbg.generated-->
+    <!--@Table business_community_member-->
+    <result column="community_member_id" jdbcType="VARCHAR" property="communityMemberId" />
+    <result column="b_id" jdbcType="VARCHAR" property="bId" />
+    <result column="community_id" jdbcType="VARCHAR" property="communityId" />
+    <result column="member_id" jdbcType="VARCHAR" property="memberId" />
+    <result column="member_type_cd" jdbcType="VARCHAR" property="memberTypeCd" />
+    <result column="month" jdbcType="INTEGER" property="month" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+    <result column="audit_status_cd" jdbcType="VARCHAR" property="auditStatusCd" />
+  </resultMap>
+  <insert id="insert" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunityMember">
+    <!--@mbg.generated-->
+    insert into business_community_member (community_member_id, b_id, community_id, 
+      member_id, member_type_cd, `month`, 
+      create_time, operate, audit_status_cd
+      )
+    values (#{communityMemberId,jdbcType=VARCHAR}, #{bId,jdbcType=VARCHAR}, #{communityId,jdbcType=VARCHAR}, 
+      #{memberId,jdbcType=VARCHAR}, #{memberTypeCd,jdbcType=VARCHAR}, #{month,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{operate,jdbcType=VARCHAR}, #{auditStatusCd,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunityMember">
+    <!--@mbg.generated-->
+    insert into business_community_member
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="communityMemberId != null">
+        community_member_id,
+      </if>
+      <if test="bId != null">
+        b_id,
+      </if>
+      <if test="communityId != null">
+        community_id,
+      </if>
+      <if test="memberId != null">
+        member_id,
+      </if>
+      <if test="memberTypeCd != null">
+        member_type_cd,
+      </if>
+      <if test="month != null">
+        `month`,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operate != null">
+        operate,
+      </if>
+      <if test="auditStatusCd != null">
+        audit_status_cd,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="communityMemberId != null">
+        #{communityMemberId,jdbcType=VARCHAR},
+      </if>
+      <if test="bId != null">
+        #{bId,jdbcType=VARCHAR},
+      </if>
+      <if test="communityId != null">
+        #{communityId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberId != null">
+        #{memberId,jdbcType=VARCHAR},
+      </if>
+      <if test="memberTypeCd != null">
+        #{memberTypeCd,jdbcType=VARCHAR},
+      </if>
+      <if test="month != null">
+        #{month,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        #{operate,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatusCd != null">
+        #{auditStatusCd,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

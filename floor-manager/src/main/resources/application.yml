@@ -1,0 +1,21 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: business_user
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 112.74.42.138:8848
+      config:
+        server-addr: 112.74.42.138:8848
+    sentinel:
+      transport:
+        dashboard: 119.23.190.71:8018
+
+feign:
+  sentinel:
+    enabled: true

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.floor.manager.floormanager.mapper.BusinessBuildingRoomMapper">
+  <resultMap id="BaseResultMap" type="com.floor.manager.floormanager.domain.entity.BusinessBuildingRoom">
+    <!--@mbg.generated-->
+    <!--@Table business_building_room-->
+    <result column="room_id" jdbcType="VARCHAR" property="roomId" />
+    <result column="b_id" jdbcType="VARCHAR" property="bId" />
+    <result column="room_num" jdbcType="VARCHAR" property="roomNum" />
+    <result column="unit_id" jdbcType="VARCHAR" property="unitId" />
+    <result column="layer" jdbcType="INTEGER" property="layer" />
+    <result column="section" jdbcType="INTEGER" property="section" />
+    <result column="apartment" jdbcType="VARCHAR" property="apartment" />
+    <result column="built_up_area" jdbcType="DECIMAL" property="builtUpArea" />
+    <result column="unit_price" jdbcType="DECIMAL" property="unitPrice" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+    <result column="state" jdbcType="VARCHAR" property="state" />
+  </resultMap>
+  <insert id="insert" parameterType="com.floor.manager.floormanager.domain.entity.BusinessBuildingRoom">
+    <!--@mbg.generated-->
+    insert into business_building_room (room_id, b_id, room_num, 
+      unit_id, layer, `section`, 
+      apartment, built_up_area, unit_price, 
+      user_id, remark, create_time, 
+      operate, `state`)
+    values (#{roomId,jdbcType=VARCHAR}, #{bId,jdbcType=VARCHAR}, #{roomNum,jdbcType=VARCHAR}, 
+      #{unitId,jdbcType=VARCHAR}, #{layer,jdbcType=INTEGER}, #{section,jdbcType=INTEGER}, 
+      #{apartment,jdbcType=VARCHAR}, #{builtUpArea,jdbcType=DECIMAL}, #{unitPrice,jdbcType=DECIMAL}, 
+      #{userId,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{operate,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.floor.manager.floormanager.domain.entity.BusinessBuildingRoom">
+    <!--@mbg.generated-->
+    insert into business_building_room
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="roomId != null">
+        room_id,
+      </if>
+      <if test="bId != null">
+        b_id,
+      </if>
+      <if test="roomNum != null">
+        room_num,
+      </if>
+      <if test="unitId != null">
+        unit_id,
+      </if>
+      <if test="layer != null">
+        layer,
+      </if>
+      <if test="section != null">
+        `section`,
+      </if>
+      <if test="apartment != null">
+        apartment,
+      </if>
+      <if test="builtUpArea != null">
+        built_up_area,
+      </if>
+      <if test="unitPrice != null">
+        unit_price,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operate != null">
+        operate,
+      </if>
+      <if test="state != null">
+        `state`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="roomId != null">
+        #{roomId,jdbcType=VARCHAR},
+      </if>
+      <if test="bId != null">
+        #{bId,jdbcType=VARCHAR},
+      </if>
+      <if test="roomNum != null">
+        #{roomNum,jdbcType=VARCHAR},
+      </if>
+      <if test="unitId != null">
+        #{unitId,jdbcType=VARCHAR},
+      </if>
+      <if test="layer != null">
+        #{layer,jdbcType=INTEGER},
+      </if>
+      <if test="section != null">
+        #{section,jdbcType=INTEGER},
+      </if>
+      <if test="apartment != null">
+        #{apartment,jdbcType=VARCHAR},
+      </if>
+      <if test="builtUpArea != null">
+        #{builtUpArea,jdbcType=DECIMAL},
+      </if>
+      <if test="unitPrice != null">
+        #{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        #{operate,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

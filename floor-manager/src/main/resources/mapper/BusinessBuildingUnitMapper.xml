@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.floor.manager.floormanager.mapper.BusinessBuildingUnitMapper">
+  <resultMap id="BaseResultMap" type="com.floor.manager.floormanager.domain.entity.BusinessBuildingUnit">
+    <!--@mbg.generated-->
+    <!--@Table business_building_unit-->
+    <result column="unit_id" jdbcType="VARCHAR" property="unitId" />
+    <result column="b_id" jdbcType="VARCHAR" property="bId" />
+    <result column="unit_num" jdbcType="VARCHAR" property="unitNum" />
+    <result column="floor_id" jdbcType="VARCHAR" property="floorId" />
+    <result column="layer_count" jdbcType="INTEGER" property="layerCount" />
+    <result column="lift" jdbcType="VARCHAR" property="lift" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+  </resultMap>
+  <insert id="insert" parameterType="com.floor.manager.floormanager.domain.entity.BusinessBuildingUnit" keyProperty="bId">
+    <!--@mbg.generated-->
+    insert into business_building_unit (unit_id, b_id, unit_num, 
+      floor_id, layer_count, lift, 
+      user_id, remark, create_time, 
+      operate)
+    values (#{unitId,jdbcType=VARCHAR}, #{bId,jdbcType=VARCHAR}, #{unitNum,jdbcType=VARCHAR}, 
+      #{floorId,jdbcType=VARCHAR}, #{layerCount,jdbcType=INTEGER}, #{lift,jdbcType=VARCHAR}, 
+      #{userId,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{operate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.floor.manager.floormanager.domain.entity.BusinessBuildingUnit">
+    <!--@mbg.generated-->
+    insert into business_building_unit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="unitId != null">
+        unit_id,
+      </if>
+      <if test="bId != null">
+        b_id,
+      </if>
+      <if test="unitNum != null">
+        unit_num,
+      </if>
+      <if test="floorId != null">
+        floor_id,
+      </if>
+      <if test="layerCount != null">
+        layer_count,
+      </if>
+      <if test="lift != null">
+        lift,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operate != null">
+        operate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="unitId != null">
+        #{unitId,jdbcType=VARCHAR},
+      </if>
+      <if test="bId != null">
+        #{bId,jdbcType=VARCHAR},
+      </if>
+      <if test="unitNum != null">
+        #{unitNum,jdbcType=VARCHAR},
+      </if>
+      <if test="floorId != null">
+        #{floorId,jdbcType=VARCHAR},
+      </if>
+      <if test="layerCount != null">
+        #{layerCount,jdbcType=INTEGER},
+      </if>
+      <if test="lift != null">
+        #{lift,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        #{operate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

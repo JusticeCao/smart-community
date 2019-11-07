@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.floor.manager.floormanager.mapper.BusinessCommunityAttrMapper">
+  <resultMap id="BaseResultMap" type="com.floor.manager.floormanager.domain.entity.BusinessCommunityAttr">
+    <!--@mbg.generated-->
+    <!--@Table business_community_attr-->
+    <result column="b_id" jdbcType="VARCHAR" property="bId" />
+    <result column="attr_id" jdbcType="VARCHAR" property="attrId" />
+    <result column="community_id" jdbcType="VARCHAR" property="communityId" />
+    <result column="spec_cd" jdbcType="VARCHAR" property="specCd" />
+    <result column="value" jdbcType="VARCHAR" property="value" />
+    <result column="month" jdbcType="INTEGER" property="month" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="operate" jdbcType="VARCHAR" property="operate" />
+  </resultMap>
+  <insert id="insert" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunityAttr">
+    <!--@mbg.generated-->
+    insert into business_community_attr (b_id, attr_id, community_id, 
+      spec_cd, `value`, `month`, 
+      create_time, operate)
+    values (#{bId,jdbcType=VARCHAR}, #{attrId,jdbcType=VARCHAR}, #{communityId,jdbcType=VARCHAR}, 
+      #{specCd,jdbcType=VARCHAR}, #{value,jdbcType=VARCHAR}, #{month,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{operate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.floor.manager.floormanager.domain.entity.BusinessCommunityAttr">
+    <!--@mbg.generated-->
+    insert into business_community_attr
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="bId != null">
+        b_id,
+      </if>
+      <if test="attrId != null">
+        attr_id,
+      </if>
+      <if test="communityId != null">
+        community_id,
+      </if>
+      <if test="specCd != null">
+        spec_cd,
+      </if>
+      <if test="value != null">
+        `value`,
+      </if>
+      <if test="month != null">
+        `month`,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="operate != null">
+        operate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="bId != null">
+        #{bId,jdbcType=VARCHAR},
+      </if>
+      <if test="attrId != null">
+        #{attrId,jdbcType=VARCHAR},
+      </if>
+      <if test="communityId != null">
+        #{communityId,jdbcType=VARCHAR},
+      </if>
+      <if test="specCd != null">
+        #{specCd,jdbcType=VARCHAR},
+      </if>
+      <if test="value != null">
+        #{value,jdbcType=VARCHAR},
+      </if>
+      <if test="month != null">
+        #{month,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="operate != null">
+        #{operate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>
